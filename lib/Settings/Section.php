@@ -25,19 +25,18 @@ namespace OCA\IssueTemplate\Settings;
 
 use OCP\IL10N;
 use OCP\IURLGenerator;
-use OCP\Settings\IIconSection;
 use OCP\Settings\ISection;
 
 /** TODO: Move to IIconSection for NC 12 */
 class Section implements ISection {
 
 	/** @var IL10N */
-	private $l;
+	private $l10n;
 	/** @var IURLGenerator */
 	private $urlGenerator;
 
 	public function __construct(IL10N $l, IURLGenerator $urlGenerator) {
-		$this->l = $l;
+		$this->l10n = $l;
 		$this->urlGenerator = $urlGenerator;
 	}
 
@@ -46,7 +45,7 @@ class Section implements ISection {
 	}
 
 	public function getName() {
-		return $this->l->t('Issue reporting');
+		return $this->l10n->t('Issue reporting');
 	}
 	
 	public function getPriority() {
